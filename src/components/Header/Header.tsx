@@ -36,7 +36,7 @@ const Header: React.FC<IHeader> = ({ setModalLogin,setModalRegister }) => {
 
             <div id="navigation" className={`navbar-menu ${menuIsOpen ? "is-active" : ""}`}>
                 <div className=" navbar-start">
-                    <a className="navbar-item" href={process.env.API_BASE_URL}>
+                    <a className="navbar-item" href={process.env.API_BASE_URL || "http://localhost:3000/"}>
                         Documentation API
                     </a>
                 </div>
