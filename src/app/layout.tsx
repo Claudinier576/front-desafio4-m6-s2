@@ -9,7 +9,7 @@ import { usePathname, useRouter } from 'next/navigation'
 import { checkIsPublicRoute } from '@/functions/checkIsPublicRoute';
 import PrivateRoute from '@/components/PrivateRoute/PrivateRoute';
 import { useEffect } from 'react';
-import HeaderAuthenticated from '@/components/HeaderAuthenticated/HeaderAuthenticated';
+import "dotenv/config";
 
 const inter = Inter({ subsets: ['latin'] })
 

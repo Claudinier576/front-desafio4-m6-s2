@@ -3,6 +3,9 @@ import React, { Dispatch, SetStateAction, useState } from 'react';
 import Image from 'next/image'
 import logo from '@/assets/contacts.png'
 // import { Container } from './styles';
+import dotenv from "dotenv";
+
+dotenv.config();
 
 interface IHeader {
     setModalLogin: Dispatch<SetStateAction<boolean>>
@@ -33,7 +36,7 @@ const Header: React.FC<IHeader> = ({ setModalLogin,setModalRegister }) => {
 
             <div id="navigation" className={`navbar-menu ${menuIsOpen ? "is-active" : ""}`}>
                 <div className=" navbar-start">
-                    <a className="navbar-item" href=''>
+                    <a className="navbar-item" href={process.env.API_BASE_URL}>
                         Documentation API
                     </a>
                 </div>

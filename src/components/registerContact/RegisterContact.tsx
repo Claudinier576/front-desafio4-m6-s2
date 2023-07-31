@@ -75,8 +75,6 @@ const RegisterContact: React.FC<IRegisterForm> = ({ isOpen, setIsOpen }) => {
             name: name
         });
 
-        console.log(data);
-
 
         const save = await api.post("contact/", data, {
             headers: {

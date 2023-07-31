@@ -1,6 +1,6 @@
 "use client"
 import { api } from "@/api/api.connect";
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 interface InputData {
     id: string;
     value: string;
@@ -10,10 +10,11 @@ interface IContactProps {
     phones: Array<string>;
     emails: Array<string>;
     name: string;
-
+    setUpdate: Dispatch<SetStateAction<boolean>>;
+    update: boolean;
 }
 
-const ContactCard = ({ idContact, emails, phones, name }: IContactProps) => {
+const ContactCard = ({ idContact, emails, phones, name,setUpdate,update }: IContactProps) => {
     const [inputsEmail, setInputsEmail] = useState<InputData[]>([]);
     const [inputsPhones, setInputsPhones] = useState<InputData[]>([]);
 
@@ -56,6 +57,7 @@ const ContactCard = ({ idContact, emails, phones, name }: IContactProps) => {
     };
     const deleteContact = async () => {
         const token = localStorage.getItem("@ContactsKeep:TOKEN");
+        setUpdate(!update);
         await api.delete('contact/' + idContact, { headers: { Authorization: token } });
     }
     const saveContact = async () => {
@@ -77,15 +79,15 @@ const ContactCard = ({ idContact, emails, phones, name }: IContactProps) => {
             phone: phones,
         });
 
-        const update = await api.patch("contact/" + idContact, data, {
+        const updatedata = await api.patch("contact/" + idContact, data, {
             headers: {
                 Authorization: token,
                 "Content-Type": "application/json"
             }
         });
 
-        if (update.status == 200) {
-
+        if (updatedata.status == 200) {
+            setUpdate(!update);
         }
 
     }

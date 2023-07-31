@@ -31,13 +31,13 @@ const EditUser = ({ isOpen, setIsOpen, emails, name, phones, userID }: IupdateUs
 
     useEffect(() => {
         const addEmails: InputData[] = []
+
         emails.map(email => {
-            console.log(email);
             addEmails.push({ id: Date.now().toString() + Math.random(), value: email })
         });
         setInputsEmail([...inputsEmail, ...addEmails])
         const addPhones: InputData[] = []
-        phones.map(phone => {
+        phones.map(phone => { 
             addPhones.push({ id: phone, value: phone });
         });
         setInputsPhones([...inputsPhones, ...addPhones])
@@ -91,9 +91,6 @@ const EditUser = ({ isOpen, setIsOpen, emails, name, phones, userID }: IupdateUs
             password: newPass,
             currentPass: currentPass,
         });
-
-        console.log(data);
-
 
         const save = await api.patch("users/"+userID , data, {
             headers: {

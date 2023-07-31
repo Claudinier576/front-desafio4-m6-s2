@@ -36,7 +36,6 @@ const LoginForm: React.FC<ILoginForm> = ({ isOpen, setIsOpen }) => {
             reset()
             setIsOpen(false);
             const data = JSON.parse(token.data).access_token;
-            console.log(data);
 
             localStorage.setItem("@ContactsKeep:TOKEN", "Bearer " + data)
 

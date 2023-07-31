@@ -3,6 +3,7 @@ import Header from '@/components/Header/Header';
 import LoginForm from '@/components/LoginForm/LoginForm';
 import RegisterForm from '@/components/registerForm/RegisterForm';
 import { useState } from 'react';
+import "dotenv/config";
 
 export default function Index() {
   const [modalLogin, setModalLogin] = useState(false);

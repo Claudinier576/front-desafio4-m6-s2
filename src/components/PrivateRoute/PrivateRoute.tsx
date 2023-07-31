@@ -17,13 +17,11 @@ const PrivateRoute = ({ children }: PrivateRouteProps) => {
     const [isUserAuthenticated, setIsUserAuthenticated] = useState<boolean>(false);
 
     useEffect(() => {
-        console.log("chegou na PRIVATE");
 
         // Função assíncrona para verificar autenticação
         const checkAuthentication = async () => {
             let isAuthenticated = await checkUserIsAuthenticated();
             setIsUserAuthenticated(isAuthenticated);
-            console.log("saporra é valida", isAuthenticated);
             if (isAuthenticated == false) {
                 push(APP_ROUTES.public.login);
             }
