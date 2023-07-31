@@ -1,0 +1,106 @@
+.reset {
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.max-w-500 {
+    max-width: 500px;
+}
+
+.max-w-420 {
+    max-width: 420px;
+}
+
+.w-500 {
+    width: 500px;
+}
+
+.w-400 {
+    width: 500px;
+}
+
+.h-100vh {
+    height: 100vh;
+}
+
+.min-h-100vh {
+    min-height: 100vh;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.p-20 {
+    padding: 20px;
+}
+
+.df-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-menu {
+    background-color: transparent;
+    color: #fff;
+}
+
+.navbar-item {
+    color: #fff;
+}
+
+.bg-Dark {
+    background-color: #1a1e22;
+}
+
+.d-flex {
+    display: flex;
+    gap: 15px;
+}
+
+.colorDanger {
+    color: #ab0d0d;
+}
+
+.bg-transparent {
+    background-color: transparent;
+}
+
+.c-white {
+    color: #fff;
+}
+
+.c-white::placeholder {
+    color: #fff;
+}
+
+.ContactList{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.iconHouver:hover{
+    color: #000;
+}
+.d-warp{
+    flex-wrap: wrap;
+}
+.right-0{
+    position: absolute;
+    right: 0;
+    z-index: 2;
+}
+.d-none{
+    display: none;
+}
+@media (min-width: "1000px") {
+    .cardOne {
+        position: relative;
+    }
+
+    .cardTwo {
+        position: relative;
+        top: 30px;
+    }
+}

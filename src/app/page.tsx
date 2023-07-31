@@ -1,95 +1,38 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client"
+import Header from '@/components/Header/Header';
+import LoginForm from '@/components/LoginForm/LoginForm';
+import RegisterForm from '@/components/registerForm/RegisterForm';
+import { useState } from 'react';
 
-export default function Home() {
+export default function Index() {
+  const [modalLogin, setModalLogin] = useState(false);
+  const [modalRegister, setModalRegister] = useState(false);
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className=''>
+      <Header setModalRegister={setModalRegister} setModalLogin={setModalLogin} ></Header>
+      <div className="container ">
+        <div className='w-100 p-20 d-flex d-warp df-center'>
+          <article className="message is-dark max-w-420 cardOne">
+            <div className="message-header">
+              <p>Bem-vindo(a) ao ContactsKeep</p>
+            </div>
+            <div className="message-body">
+              O ContactsKeep é uma aplicação web intuitiva e eficiente, projetada para simplificar o gerenciamento de contatos em sua vida pessoal e profissional. Com um design limpo e amigável, você pode facilmente armazenar, editar e visualizar informações importantes de contatos, sem a necessidade de recorrer a inúmeras listas ou cadernos físicos.
+            </div>
+          </article>
+          <article className="message is-dark max-w-420 cardTwo">
+            <div className="message-header">
+              <p>Principais funções</p>
+            </div>
+            <div className="message-body">
+              Armazenamento centralizado: Esqueça a bagunça de informações de contato em diferentes dispositivos e plataformas. O ContactsKeep permite que você armazene todos os seus contatos em um único local seguro e protegido por senha.
+            </div>
+          </article>
         </div>
+
+        <LoginForm setIsOpen={setModalLogin} isOpen={modalLogin}></LoginForm>
+        <RegisterForm setIsOpen={setModalRegister} isOpen={modalRegister}></RegisterForm>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    </div>
+  );
 }
